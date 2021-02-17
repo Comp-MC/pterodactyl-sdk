@@ -2,9 +2,7 @@
 
 namespace HCGCloud\Pterodactyl\Exceptions;
 
-use Exception;
-
-class TimeoutException extends Exception
+class TimeoutException extends PterodactylSDKException
 {
     /**
      * The output returned from the operation.

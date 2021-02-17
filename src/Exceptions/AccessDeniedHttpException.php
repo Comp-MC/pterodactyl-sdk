@@ -2,9 +2,7 @@
 
 namespace HCGCloud\Pterodactyl\Exceptions;
 
-use Exception;
-
-class AccessDeniedHttpException extends Exception
+class AccessDeniedHttpException extends PterodactylSDKException
 {
     /**
      * Create a new exception instance.
