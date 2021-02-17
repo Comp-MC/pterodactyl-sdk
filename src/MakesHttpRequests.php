@@ -4,6 +4,7 @@ namespace HCGCloud\Pterodactyl;
 
 use HCGCloud\Pterodactyl\Exceptions\FailedActionException;
 use HCGCloud\Pterodactyl\Exceptions\NotFoundException;
+use HCGCloud\Pterodactyl\Exceptions\PterodactylSDKException;
 use HCGCloud\Pterodactyl\Exceptions\TimeoutException;
 use HCGCloud\Pterodactyl\Exceptions\ValidationException;
 use Psr\Http\Message\ResponseInterface;
@@ -125,7 +126,7 @@ trait MakesHttpRequests
             throw new FailedActionException((string) $response->getBody());
         }
 
-        throw new \Exception((string) $response->getBody());
+        throw new PterodactylSDKException((string) $response->getBody());
     }
 
     /**
