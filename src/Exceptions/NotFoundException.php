@@ -2,9 +2,7 @@
 
 namespace HCGCloud\Pterodactyl\Exceptions;
 
-use Exception;
-
-class NotFoundException extends Exception
+class NotFoundException extends PterodactylSDKException
 {
     /**
      * Create a new exception instance.

@@ -2,9 +2,7 @@
 
 namespace HCGCloud\Pterodactyl\Exceptions;
 
-use Exception;
-
-class InvaildApiTypeException extends Exception
+class InvaildApiTypeException extends PterodactylSDKException
 {
     /**
      * Create a new exception instance.

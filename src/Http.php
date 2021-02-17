@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use HCGCloud\Pterodactyl\Exceptions\AccessDeniedHttpException;
 use HCGCloud\Pterodactyl\Exceptions\FailedActionException;
 use HCGCloud\Pterodactyl\Exceptions\NotFoundException;
+use HCGCloud\Pterodactyl\Exceptions\PterodactylUnknownErrorException;
 use HCGCloud\Pterodactyl\Exceptions\TimeoutException;
 use HCGCloud\Pterodactyl\Exceptions\ValidationException;
 use Psr\Http\Message\ResponseInterface;
@@ -254,7 +255,7 @@ class Http
             case 422:
                 throw new ValidationException(json_decode((string) $response->getBody(), true));
             default:
-                throw new \Exception((string) $response->getBody());
+                throw new PterodactylUnknownErrorException((string) $response->getBody());
         }
     }
 
