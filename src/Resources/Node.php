@@ -160,6 +160,15 @@ class Node extends Resource
     }
 
     /**
+     * Configure the given node.
+     *
+     * @return mixed
+     */
+    public function config() {
+        return $this->pterodactyl->configureNode($this->id);
+    }
+
+    /**
      * Get a collection of allocations of the given node.
      *
      * @param int $page

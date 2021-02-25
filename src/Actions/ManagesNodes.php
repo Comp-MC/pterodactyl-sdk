@@ -57,6 +57,16 @@ trait ManagesNodes
     }
 
     /**
+     * Gets Wings configuration
+     *
+     * @param int $nodeId
+     * @return mixed
+     */
+    public function configureNode(int $nodeId) {
+        return $this->get("api/application/nodes/$nodeId/configuration");
+    }
+
+    /**
      * Delete the given node.
      *
      * @param int $nodeId
