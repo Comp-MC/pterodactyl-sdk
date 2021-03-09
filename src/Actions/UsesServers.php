@@ -69,4 +69,16 @@ trait UsesServers
     {
         return $this->get("api/client/servers/$serverIdentifier/utilization");
     }
+
+    /**
+     * Get the utilization of a given server.
+     *
+     * @param string $serverIdentifier
+     *
+     * @return Stats[]
+     */
+    public function v1utilizationServer(string $serverIdentifier)
+    {
+        return $this->get("api/client/servers/$serverIdentifier/resources");
+    }
 }
